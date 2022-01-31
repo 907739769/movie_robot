@@ -163,3 +163,6 @@ class DoubanMovie:
             all_result = all_result + result
             print('%s天之内加入%s的影视，共%s部' % (within_days, type, len(result)))
         return all_result
+
+if __name__ == '__main__':
+      get_user_movie_list();

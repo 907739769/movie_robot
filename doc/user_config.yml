@@ -4,7 +4,7 @@ douban:
   #wish为想看、do为在看、collect为看过，多个支持;号隔开 示范：wish;do
   types: wish
   #这个就是豆瓣ID https://movie.douban.com/people/user1/wish PC端，这个访问地址中的user1 就是你的豆瓣ID，豆瓣手机客户端，也可以在账户管理页面看到，支持监听多个用户，;号隔开
-  user_domain: 203387393
+  user_domain: 193538704
   #你加入想看的电影一定是有添加时间的，这个就是取多少天内的电影；如果你曾经在想看点了很多不想看的电影，用这个配置，一定程度上可以过滤掉无效被你遗忘的信息；
   within_days: 365
 downloader:
