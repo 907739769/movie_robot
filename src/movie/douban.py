@@ -122,7 +122,7 @@ class DoubanMovie:
                 res = self.req.get_res(url, headers=self.__headers, cookies=self.cookies)
                 self.__set_cookies(res)
                 text = res.text
-                print("text", text)
+                # print("text", text)
                 if text.find('有异常请求从你的 IP 发出') != -1:
                     print('被豆瓣识别到抓取行为了，请更换IP后才能使用')
                     return None
@@ -135,13 +135,13 @@ class DoubanMovie:
                 movie_url_list = html.xpath('//li[@class="title"]/a/@href')
                 add_date_list = html.xpath('//li/span[@class="date"]/text()')
                 movie_list_a = html.xpath('//div[@class="item"]/div[@class="info"]/ul/li[@class="title"]/a/em/text()')
-                print("movie_url_list", movie_url_list)
-                print("add_date_list", add_date_list)
-                print("movie_list_a", movie_list_a)
+                # print("movie_url_list", movie_url_list)
+                # print("add_date_list", add_date_list)
+                # print("movie_list_a", movie_list_a)
                 for i in range(len(movie_list_a)):
                     add_date = add_date_list[i]
                     days_ago = (datetime.datetime.now() - datetime.datetime.strptime(add_date, "%Y-%m-%d")).days
-                    print(movie_list_a[i] + " days_ago", days_ago)
+                    # print(movie_list_a[i] + " days_ago", days_ago)
                     if within_days is not None and days_ago > within_days:
                         turn_page = False
                         continue
