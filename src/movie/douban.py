@@ -72,7 +72,7 @@ class DoubanMovie:
         if match_season:
             season_number = match_season.group(1)
         match_js = re.findall(r'<span class="pl">集数:</span>\s*(\d+)<br/>', text)
-        match_pc = re.findall(r'<span class="pl">单集片长:</span>\s*(\d+)<br/>', text)
+        match_pc = re.findall(r'<span class="pl">单集片长:</span>\s*(\d+)分钟<br/>', text)
         if (match_js is not None and len(match_js) > 0) or (match_pc is not None and len(match_pc) > 0):
             episode = int(str(match_js[0]))
             type = 'Series'
