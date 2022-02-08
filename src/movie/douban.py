@@ -72,7 +72,8 @@ class DoubanMovie:
         if match_season:
             season_number = match_season.group(1)
         match_js = re.findall(r'<span class="pl">集数:</span>\s*(\d+)<br/>', text)
-        if match_js is not None and len(match_js) > 0:
+        match_pc = re.findall(r'<span class="pl">单集片长:</span>\s*(\d+)<br/>', text)
+        if (match_js is not None and len(match_js) > 0) or (match_pc is not None and len(match_pc) > 0):
             episode = int(str(match_js[0]))
             type = 'Series'
             # 当影视为剧集时，本地语言影视名，需要考虑到第*季字符的影响，不能直接按空格切分，如 权力的游戏 第八季 Game。。。
