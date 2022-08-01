@@ -44,6 +44,8 @@ class Radarr:
     params['monitored'] = self.monitored
     params['addOptions'] = self.addOptions
     params['minimumAvailability'] = self.minimumAvailability
+    headers = self.headers
+    headers["Content-Type"] = "application/json"
     r = self.req.post(self.server + api, params=json.dumps(params), headers=self.headers)
     r = json.loads(r)
     if 'errorMessage' in r:

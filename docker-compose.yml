@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    container_name: movie_robot
+    image: 'movie_robot:latest'
+    restart: unless-stopped
+    network_mode: "host"
+    environment:
+      DOWNLOAD_CRON: "0 2,10,12,14,16,19,21 * * *"
+      TZ: Asia/Shanghai
+      DEBIAN_FRONTEND: noninteractive
+      PUID: 1026
+      PGID: 100
+    volumes:
+      - /volume1/docker/movie-robot/data:/data

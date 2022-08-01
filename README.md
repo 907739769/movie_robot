@@ -28,7 +28,7 @@
 制作成Docker(在项目根目录下运行)
 =========================
 制作镜像
- docker build -t movie_robot  . -f Dockerfile --platform linux/amd64
+docker build -t movie_robot  . -f Dockerfile --platform linux/amd64
 查看镜像
 docker images 
 运行镜像
