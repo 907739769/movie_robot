@@ -46,7 +46,7 @@ class Radarr:
     params['minimumAvailability'] = self.minimumAvailability
     headers = self.headers
     headers["Content-Type"] = "application/json"
-    r = self.req.post(self.server + api, params=json.dumps(params), headers=self.headers)
+    r = self.req.post(self.server + api, params=json.dumps(params), headers=headers)
     r = json.loads(r)
     if 'errorMessage' in r:
       print(r['errorMessage'])
